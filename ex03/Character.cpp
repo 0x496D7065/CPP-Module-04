@@ -61,6 +61,7 @@ Character &Character::operator=(const Character &to_copy)
 		else
 			this->_inv[i] = NULL;
 	}
+	return *this;
 }
 
 std::string const &Character::getName() const
@@ -78,10 +79,10 @@ void Character::equip(AMateria *m)
 	int	i = 0;
 	while (i < 4)
 	{
-		if (this->_inv[i] != NULL)
+		if (this->_inv[i] == NULL)
 		{
 			this->_inv[i] = m;
-			break;
+			return ;
 		}
 		i++;
 	}
@@ -102,4 +103,9 @@ void Character::use(int idx, ICharacter &target)
 		return ;
 	}
 	std::cout << "no materia equipped in this slot" << std::endl;
+}
+
+AMateria* Character::getMateria(int idx)
+{
+	return (_inv[idx]);
 }

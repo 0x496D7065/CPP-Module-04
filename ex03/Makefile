@@ -14,7 +14,7 @@ NAME	= Materia
 
 CC		= c++
 
-SRCS	= main.cpp AMateria.cpp Ice.cpp Character.cpp
+SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
